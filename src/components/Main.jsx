@@ -35,7 +35,7 @@ export default function Main() {
           isGameWon={isGameWon}
         />
         <Languages wrongGuessCounter={wrongGuessCounter} />
-        <Word word={word} clickedLetters={clickedLetters} />
+        <Word word={word} clickedLetters={clickedLetters} isGameLost={isGameLost}/>
       </div>
       <Keyboard
         setClickedLetters={setClickedLetters}
