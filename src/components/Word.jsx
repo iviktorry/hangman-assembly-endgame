@@ -1,8 +1,11 @@
-export default function Word() {
-  const str = "react";
-  const arr = [...str];
+import { useState } from "react";
 
-  const word = arr.map((item, index) => (
+export default function Word() {
+  const [word, setWord] = useState("react");
+
+  const arr = word.split("");
+
+  const wordArr = arr.map((item, index) => (
     <span
       key={index}
       className="text-xl uppercase w-12 h-12 flex items-center justify-center bg-neutral-700 border-b-2"
@@ -10,5 +13,5 @@ export default function Word() {
       {item}
     </span>
   ));
-  return <div className="flex gap-1">{word}</div>;
+  return <div className="flex gap-1">{wordArr}</div>;
 }
