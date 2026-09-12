@@ -1,6 +1,7 @@
 import Header from "./Header";
 import Languages from "./Languages";
 import Status from "./Status";
+import Word from "./Word";
 
 export default function Main() {
   return (
@@ -8,6 +9,7 @@ export default function Main() {
       <Header />
       <Status />
       <Languages />
+      <Word />
     </main>
   );
 }
