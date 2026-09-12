@@ -4,6 +4,7 @@ export default function Keyboard({
   setClickedLetters,
   clickedLetters,
   word,
+  gameOver
 }) {
   function handleClick(item) {
     setClickedLetters((prev) => (prev.includes(item) ? prev : [...prev, item]));
@@ -32,6 +33,7 @@ export default function Keyboard({
         item={item}
         clickedLetters={clickedLetters}
         style={style}
+        gameOver={gameOver}
       />
     );
   });
