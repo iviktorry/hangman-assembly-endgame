@@ -6,6 +6,7 @@ import Word from "./Word";
 import NewGameButton from "./NewGameButton";
 import { useState } from "react";
 import { languages } from "../languages";
+import Confetti from "react-confetti";
 
 export default function Main() {
   const [word, setWord] = useState("react");
@@ -19,10 +20,10 @@ export default function Main() {
     .split("")
     .every((item) => clickedLetters.includes(item));
   const gameOver = isGameWon || isGameLost;
-  console.log(gameOver);
 
   return (
     <main className="max-w-xl flex flex-col items-center gap-8 mx-auto">
+      {isGameWon && <Confetti />}
       <div className="max-w-md flex flex-col items-center gap-8">
         <Header />
         <Status
