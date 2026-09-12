@@ -1,4 +1,4 @@
-export default function LetterButton({ handleClick, item }) {
+export default function KeyboardLetter({ handleClick, item }) {
   return (
     <button
       onClick={handleClick}

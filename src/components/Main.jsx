@@ -1,4 +1,4 @@
-import Alphabet from "./Alphabet";
+import Keyboard from "./Keyboard";
 import Header from "./Header";
 import Languages from "./Languages";
 import Status from "./Status";
@@ -14,7 +14,7 @@ export default function Main() {
         <Languages />
         <Word />
       </div>
-      <Alphabet />
+      <Keyboard />
       <NewGameButton />
     </main>
   );
