@@ -1,6 +1,11 @@
-export default function NewGameButton({ setClickedLetters }) {
+export default function NewGameButton({
+  setClickedLetters,
+  setWord,
+  wordsArray,
+}) {
   function handleReset() {
     setClickedLetters([]);
+    setWord(() => wordsArray[Math.floor(Math.random() * wordsArray.length)]);
   }
   return (
     <button
