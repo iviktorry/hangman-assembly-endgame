@@ -5,13 +5,17 @@ import Status from "./Status";
 import Word from "./Word";
 
 export default function Main() {
+
+    
   return (
-    <main className="max-w-md flex flex-col items-center gap-10 mx-auto">
-      <Header />
-      <Status />
-      <Languages />
-      <Word />
-      <Alphabet />
+    <main className="max-w-xl flex flex-col items-center gap-10 mx-auto">
+      <div className="max-w-md flex flex-col items-center gap-10">
+        <Header />
+        <Status />
+        <Languages />
+        <Word />
+      </div>
+      <Alphabet/>
     </main>
   );
 }
