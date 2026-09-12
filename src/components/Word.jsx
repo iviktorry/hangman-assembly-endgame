@@ -13,5 +13,5 @@ export default function Word() {
       {item}
     </span>
   ));
-  return <div className="flex gap-1">{wordArr}</div>;
+  return <section className="flex gap-1">{wordArr}</section>;
 }

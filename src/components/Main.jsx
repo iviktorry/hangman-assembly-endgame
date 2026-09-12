@@ -1,3 +1,4 @@
+import Alphabet from "./Alphabet";
 import Header from "./Header";
 import Languages from "./Languages";
 import Status from "./Status";
@@ -10,6 +11,7 @@ export default function Main() {
       <Status />
       <Languages />
       <Word />
+      <Alphabet />
     </main>
   );
 }
