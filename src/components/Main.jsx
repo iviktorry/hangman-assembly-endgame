@@ -15,7 +15,6 @@ export default function Main() {
   );
   const [clickedLetters, setClickedLetters] = useState([]);
 
-
   const wrongGuessCounter = clickedLetters.filter(
     (item) => !word.includes(item),
   ).length;
@@ -26,9 +25,9 @@ export default function Main() {
   const gameOver = isGameWon || isGameLost;
 
   return (
-    <main className="max-w-xl flex flex-col items-center gap-8 mx-auto">
+    <main className="max-w-xl flex flex-col items-center gap-8 mx-auto overflow-hidden">
       {isGameWon && <Confetti />}
-      <div className="max-w-md flex flex-col items-center gap-8">
+      <div className="max-w-md w-full flex flex-col items-center gap-8">
         <Header />
         <Status
           gameOver={gameOver}
@@ -43,7 +42,13 @@ export default function Main() {
         clickedLetters={clickedLetters}
         word={word}
       />
-      {gameOver && <NewGameButton setClickedLetters={setClickedLetters} />}
+      {gameOver && (
+        <NewGameButton
+          setClickedLetters={setClickedLetters}
+          setWord={setWord}
+          wordsArray={wordsArray}
+        />
+      )}
     </main>
   );
 }

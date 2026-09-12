@@ -37,7 +37,7 @@ export default function Keyboard({
   });
 
   return (
-    <section className="flex gap-2 flex-wrap justify-center">
+    <section className="flex gap-1 md:gap-2 flex-wrap justify-center">
       {alphabetElement}
     </section>
   );
