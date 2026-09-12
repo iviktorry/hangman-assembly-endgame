@@ -1,19 +1,21 @@
-import { useState } from "react";
 import KeyboardLetter from "./KeyboardLetter";
 
-export default function Keyboard() {
-  const [clickedButtons, setClickedButtons] = useState([]);
-  function handleClick(event) {
-    const el = event.currentTarget.value;
-    setClickedButtons((prev) => [...prev, el]);
-    console.log(clickedButtons);
+export default function Keyboard({ setClickedLetters, clickedLetters, style }) {
+  function handleClick(item) {
+    setClickedLetters((prev) => (prev.includes(item) ? prev : [...prev, item]));
+    console.log(clickedLetters);
   }
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const alphabetElement = alphabet
     .split("")
     .map((item) => (
-      <KeyboardLetter key={item} handleClick={handleClick} item={item} />
+      <KeyboardLetter
+        key={item}
+        handleClick={() => handleClick(item)}
+        item={item}
+        style={style}
+      />
     ));
 
   return (

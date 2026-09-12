@@ -1,8 +1,5 @@
-import { useState } from "react";
 
-export default function Word() {
-  const [word, setWord] = useState("react");
-
+export default function Word({ word }) {
   const wordArray = word.split("").map((item, index) => (
     <span
       key={index}
