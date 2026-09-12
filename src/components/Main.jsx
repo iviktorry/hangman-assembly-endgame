@@ -27,7 +27,7 @@ export default function Main() {
         clickedLetters={clickedLetters}
         word={word}
       />
-      <NewGameButton />
+      {gameOver && <NewGameButton setClickedLetters={setClickedLetters} />}
     </main>
   );
 }
