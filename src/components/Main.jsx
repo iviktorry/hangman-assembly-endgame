@@ -9,8 +9,12 @@ import { languages } from "../languages";
 import Confetti from "react-confetti";
 
 export default function Main() {
-  const [word, setWord] = useState("react");
+  const wordsArray = ["react", "library", "elephant", "telephone"];
+  const [word, setWord] = useState(
+    () => wordsArray[Math.floor(Math.random() * wordsArray.length)],
+  );
   const [clickedLetters, setClickedLetters] = useState([]);
+
 
   const wrongGuessCounter = clickedLetters.filter(
     (item) => !word.includes(item),
