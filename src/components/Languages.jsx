@@ -5,7 +5,7 @@ export default function Languages() {
     <span
       key={item.name}
       style={{ backgroundColor: item.backgroundColor, color: item.color }}
-      className="px-2 py-1 rounded-md"
+      className="px-2 py-1 rounded-sm"
     >
       {item.name}
     </span>

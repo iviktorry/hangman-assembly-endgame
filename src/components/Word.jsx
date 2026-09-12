@@ -6,7 +6,7 @@ export default function Word() {
   const wordArray = word.split("").map((item, index) => (
     <span
       key={index}
-      className="text-xl uppercase w-12 h-12 flex items-center justify-center bg-neutral-700 border-b-2"
+      className="text-xl uppercase w-12 h-12 flex items-center justify-center rounded-xs bg-neutral-700 border-b-2"
     >
       {item}
     </span>
