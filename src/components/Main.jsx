@@ -10,6 +10,10 @@ export default function Main() {
   const [word, setWord] = useState("react");
   const [clickedLetters, setClickedLetters] = useState([]);
 
+  const wrongGuessCounter = clickedLetters.filter(
+    (item) => !word.includes(item),
+  ).length;
+
   return (
     <main className="max-w-xl flex flex-col items-center gap-10 mx-auto">
       <div className="max-w-md flex flex-col items-center gap-10">

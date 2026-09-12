@@ -1,6 +1,10 @@
 import KeyboardLetter from "./KeyboardLetter";
 
-export default function Keyboard({ setClickedLetters, clickedLetters, word }) {
+export default function Keyboard({
+  setClickedLetters,
+  clickedLetters,
+  word,
+}) {
   function handleClick(item) {
     setClickedLetters((prev) => (prev.includes(item) ? prev : [...prev, item]));
   }
