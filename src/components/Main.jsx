@@ -10,14 +10,6 @@ export default function Main() {
   const [word, setWord] = useState("react");
   const [clickedLetters, setClickedLetters] = useState([]);
 
-  let style;
-
-  clickedLetters.map((item) =>
-    word.split("").includes(item)
-      ? (style = "bg-green-400")
-      : (style = "bg-red-400"),
-  );
-
   return (
     <main className="max-w-xl flex flex-col items-center gap-10 mx-auto">
       <div className="max-w-md flex flex-col items-center gap-10">
@@ -29,7 +21,7 @@ export default function Main() {
       <Keyboard
         clickedLetters={clickedLetters}
         setClickedLetters={setClickedLetters}
-        style={style}
+        word={word}
       />
       <NewGameButton />
     </main>
