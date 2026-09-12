@@ -1,17 +1,16 @@
+import LetterButton from "./LetterButton";
+
 export default function Alphabet() {
-  function handleClick() {}
+  function handleClick(event) {
+    const el = event.currentTarget.value;
+    console.log(el);
+  }
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
   const alphabetArr = alphabet.split("");
-  
+
   const alphabetElement = alphabetArr.map((item) => (
-    <button
-      key={item}
-      onClick={handleClick}
-      className="h-12 w-12 flex rounded-sm uppercase items-center justify-center text-black ring-1 ring-white bg-yellow-400"
-    >
-      {item}
-    </button>
+    <LetterButton key={item} handleClick={handleClick} item={item} />
   ));
 
   return (
