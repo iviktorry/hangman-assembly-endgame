@@ -6,6 +6,7 @@ export default function Keyboard({ setClickedLetters, clickedLetters, word }) {
   }
 
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
   const alphabetElement = alphabet.split("").map((item) => {
     const isGuessed = clickedLetters.includes(item);
     const isCorrect = isGuessed && word.includes(item);

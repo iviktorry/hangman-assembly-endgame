@@ -16,11 +16,11 @@ export default function Main() {
         <Header />
         <Status />
         <Languages />
-        <Word word={word} />
+        <Word word={word} clickedLetters={clickedLetters} />
       </div>
       <Keyboard
-        clickedLetters={clickedLetters}
         setClickedLetters={setClickedLetters}
+        clickedLetters={clickedLetters}
         word={word}
       />
       <NewGameButton />
