@@ -1,16 +1,48 @@
-# React + Vite
+# 💻 Assembly: Endgame
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A word-guessing game built with React, Vite, and Tailwind CSS. Save the programming world from complete Assembly takeover by guessing the hidden word before all high-level languages disappear!
 
-Currently, two official plugins are available:
+![screenshot of interface](./src/assets/screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Links
 
-## React Compiler
+- **Live Site:** [View Live Demo](https://hangman-assembly-endgame.vercel.app/)
+- **GitHub Repository:** [View Source Code](https://github.com/iviktorry/hangman-assembly-endgame)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **JavaScript (ES6+)** — Core game logic, array manipulation (`.map()`, `.filter()`, `.every()`, `.includes()`), and helper utilities
+- **React** — Component-based architecture, derived states, and lazy initialization
+- **Tailwind CSS** — Custom styling, typography, and responsive layouts
+- **react-confetti** — Celebratory particles on victory
+- **Vite** — High-performance build tool
+
+---
+
+## ✨ Features & Gameplay Rules
+
+- **Programming Language Lives:** Each wrong guess eliminates a high-level language (JavaScript, Python, React, etc.) until only Assembly remains.
+- **Dynamic Farewells:** Displays contextual farewell messages whenever a language goes extinct.
+- **Visual Word Status:** Reveals correctly guessed letters in real-time, with automatic end-game state highlighting.
+- **Full Accessibility (a11y):** Screen-reader friendly layout utilizing `sr-only` aria announcements (`blank.` vs actual letters) and interactive button attributes (`disabled`, `aria-pressed`).
+- **Celebratory Particle Effects:** Fullscreen confetti effect upon successfully saving the tech ecosystem.
+
+---
+
+## 🧠 What I Learned & Practiced
+
+- **Minimal State Architecture:** Avoided redundant states by computing game logic (e.g., `wrongGuessCounter`, `isGameLost`, `isGameWon`, `farewellText`) purely on the fly derived from `word` and `clickedLetters`.
+- **Accessible Screen Reader Output:** Built dedicated `sr-only` descriptions mapping over letter elements to provide audible feedback for visual blanks (`blank.`).
+- **Clean Component Encapsulation:** Passed isolated value updates through top-down callbacks (`handleClick={() => handleClick(item)}`) rather than manipulating target elements via raw DOM events.
+- **Utility Modules:** Separated pure JavaScript logic (`getRandomWord`, `getFarewellText`) from React component rendering into external helper modules.
+- **Lazy State Initialization:** Initialized random word state lazily (`useState(() => getRandomWord())`) to prevent unnecessary recalculations on re-renders.
+- **Advanced Array Operations:** Leveraged native JavaScript methods (`.filter()` for wrong guess calculations, `.every()` for win detection, and `.includes()` for letter state checks) to process state efficiently.
+
+---
+
+## 🙋‍♀️ Author
+
+- GitHub — [@iviktorry](https://github.com/iviktorry)
+- Frontend Mentor — [@iviktorry](https://www.frontendmentor.io/profile/iviktorry)
