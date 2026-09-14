@@ -26,7 +26,7 @@ export default function Status({
     <section
       aria-live="polite"
       role="status"
-      className={`h-14 md:h-18 flex flex-col items-center justify-center text-lg w-full rounded-sm ${style}`}
+      className={`h-18  flex flex-col items-center justify-center text-lg w-[92%] md:w-full rounded-sm ${style}`}
     >
       <p className="text-xl md:text-2xl font-semibold">{title}</p>
       <p className="text-base">{text}</p>
