@@ -3,7 +3,7 @@ export default function Status({
   isGameLost,
   isGameWon,
   farewellText,
-  wrongGuessCounter,
+  isLastGuessIncorrect,
 }) {
   let style, title, text;
 
@@ -17,16 +17,16 @@ export default function Status({
       title = "Game over!";
       text = "You lose! Better start learning Assembly";
     }
-  } else if (wrongGuessCounter !== 0) {
+  } else if (isLastGuessIncorrect) {
     title = `${farewellText}`;
-    style = "bg-purple-400/50";
+    style = "bg-purple-400/50 italic";
   }
 
   return (
     <section
-      className={`h-18 flex flex-col items-center justify-center text-lg w-full rounded-sm ${style}`}
+      className={`h-14 md:h-18 flex flex-col items-center justify-center text-lg w-full rounded-sm ${style}`}
     >
-      <p className="text-2xl font-semibold">{title}</p>
+      <p className="text-xl md:text-2xl font-semibold">{title}</p>
       <p className="text-base">{text}</p>
     </section>
   );

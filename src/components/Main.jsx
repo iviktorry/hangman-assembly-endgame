@@ -26,15 +26,17 @@ export default function Main() {
     .every((item) => clickedLetters.includes(item));
   const gameOver = isGameWon || isGameLost;
 
-  let farewellText;
-  if (wrongGuessCounter !== 0) {
-    farewellText = getFarewellText(languages[wrongGuessCounter - 1].name);
-  }
+  const lastGuessedLetter = clickedLetters[clickedLetters.length - 1];
+  const isLastGuessIncorrect =
+    lastGuessedLetter && !word.includes(lastGuessedLetter);
+
+  const farewellText =
+    wrongGuessCounter && getFarewellText(languages[wrongGuessCounter - 1].name);
 
   return (
-    <main className="max-w-xl flex flex-col items-center gap-8 mx-auto overflow-hidden">
-      {isGameWon && <Confetti />}
-      <div className="max-w-md w-full flex flex-col items-center gap-8">
+    <main className="max-w-xl flex flex-col items-center gap-6 mx-auto overflow-hidden">
+      {isGameWon && <Confetti className="fixed top-0 left-0 h-full w-full" />}
+      <div className="max-w-md w-full flex flex-col items-center gap-6">
         <Header />
         <Status
           gameOver={gameOver}
@@ -42,6 +44,7 @@ export default function Main() {
           isGameWon={isGameWon}
           farewellText={farewellText}
           wrongGuessCounter={wrongGuessCounter}
+          isLastGuessIncorrect={isLastGuessIncorrect}
         />
         <Languages wrongGuessCounter={wrongGuessCounter} />
         <Word
