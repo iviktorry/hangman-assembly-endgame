@@ -8,12 +8,12 @@ import { useState } from "react";
 import { languages } from "../languages";
 import Confetti from "react-confetti";
 import { getFarewellText } from "../utils.js";
+import { getRandomWord } from "../utils";
 
 export default function Main() {
-  const wordsArray = ["react", "library", "elephant", "telephone"];
 
   const [word, setWord] = useState(
-    () => wordsArray[Math.floor(Math.random() * wordsArray.length)],
+    () => getRandomWord(),
   );
   const [clickedLetters, setClickedLetters] = useState([]);
 
@@ -65,7 +65,7 @@ export default function Main() {
         <NewGameButton
           setClickedLetters={setClickedLetters}
           setWord={setWord}
-          wordsArray={wordsArray}
+          getRandomWord={getRandomWord}
           wrongGuessCounter={wrongGuessCounter}
         />
       )}
