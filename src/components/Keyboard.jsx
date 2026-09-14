@@ -19,11 +19,11 @@ export default function Keyboard({
 
     let style;
     if (isCorrect) {
-      style = "bg-green-300";
+      style = "bg-green-400";
     } else if (isWrong) {
-      style = "bg-red-300";
+      style = "bg-red-500";
     } else {
-      style = "bg-yellow-300";
+      style = "bg-amber-200";
     }
 
     return (
