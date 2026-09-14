@@ -7,9 +7,11 @@ import NewGameButton from "./NewGameButton";
 import { useState } from "react";
 import { languages } from "../languages";
 import Confetti from "react-confetti";
+import { getFarewellText } from "../utils.js";
 
 export default function Main() {
   const wordsArray = ["react", "library", "elephant", "telephone"];
+
   const [word, setWord] = useState(
     () => wordsArray[Math.floor(Math.random() * wordsArray.length)],
   );
@@ -24,6 +26,11 @@ export default function Main() {
     .every((item) => clickedLetters.includes(item));
   const gameOver = isGameWon || isGameLost;
 
+  let farewellText;
+  if (wrongGuessCounter !== 0) {
+    farewellText = getFarewellText(languages[wrongGuessCounter - 1].name);
+  }
+
   return (
     <main className="max-w-xl flex flex-col items-center gap-8 mx-auto overflow-hidden">
       {isGameWon && <Confetti />}
@@ -33,9 +40,15 @@ export default function Main() {
           gameOver={gameOver}
           isGameLost={isGameLost}
           isGameWon={isGameWon}
+          farewellText={farewellText}
+          wrongGuessCounter={wrongGuessCounter}
         />
         <Languages wrongGuessCounter={wrongGuessCounter} />
-        <Word word={word} clickedLetters={clickedLetters} isGameLost={isGameLost}/>
+        <Word
+          word={word}
+          clickedLetters={clickedLetters}
+          isGameLost={isGameLost}
+        />
       </div>
       <Keyboard
         setClickedLetters={setClickedLetters}
@@ -48,6 +61,7 @@ export default function Main() {
           setClickedLetters={setClickedLetters}
           setWord={setWord}
           wordsArray={wordsArray}
+          wrongGuessCounter={wrongGuessCounter}
         />
       )}
     </main>
