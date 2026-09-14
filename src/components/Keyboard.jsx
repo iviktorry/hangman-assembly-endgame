@@ -1,10 +1,13 @@
 import KeyboardLetter from "./KeyboardLetter";
+import { languages } from "../languages";
 
 export default function Keyboard({
   setClickedLetters,
   clickedLetters,
   word,
-  gameOver
+  gameOver,
+  lastGuessedLetter,
+  wrongGuessCounter,
 }) {
   function handleClick(item) {
     setClickedLetters((prev) => (prev.includes(item) ? prev : [...prev, item]));
@@ -29,11 +32,12 @@ export default function Keyboard({
     return (
       <KeyboardLetter
         key={item}
-        handleClick={() => handleClick(item)}
         item={item}
-        clickedLetters={clickedLetters}
+        word={word}
         style={style}
         gameOver={gameOver}
+        clickedLetters={clickedLetters}
+        handleClick={() => handleClick(item)}
       />
     );
   });
@@ -41,6 +45,12 @@ export default function Keyboard({
   return (
     <section className="flex gap-1 md:gap-2 flex-wrap justify-center">
       {alphabetElement}
+      <p className="sr-only">
+        {word.includes(lastGuessedLetter)
+          ? `Correct, letter ${lastGuessedLetter} is in the word.`
+          : `Ops, letter ${lastGuessedLetter} is not in the word`}
+        You have {languages.length - 1 - wrongGuessCounter} attempts left. 
+      </p>
     </section>
   );
 }

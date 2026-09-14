@@ -10,6 +10,14 @@ export default function Word({ word, clickedLetters, isGameLost }) {
     );
   });
   return (
-    <section className="flex w-full justify-center gap-1">{wordArray}</section>
+    <section className="flex w-full justify-center gap-1">
+      {wordArray}
+      <p className="sr-only">
+        Current word:{" "}
+        {word
+          .split("")
+          .map((item) => (clickedLetters.includes(item) ? `${item}.` : "blank."))}
+      </p>
+    </section>
   );
 }

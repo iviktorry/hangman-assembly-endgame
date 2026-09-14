@@ -58,6 +58,8 @@ export default function Main() {
         clickedLetters={clickedLetters}
         word={word}
         gameOver={gameOver}
+        lastGuessedLetter={lastGuessedLetter}
+        wrongGuessCounter={wrongGuessCounter}
       />
       {gameOver && (
         <NewGameButton
