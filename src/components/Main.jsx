@@ -34,9 +34,9 @@ export default function Main() {
     wrongGuessCounter && getFarewellText(languages[wrongGuessCounter - 1].name);
 
   return (
-    <main className="max-w-xl flex flex-col items-center gap-6 mx-auto overflow-hidden">
+    <main className="max-w-xl flex flex-col items-center gap-10 md:gap-8 mx-auto overflow-hidden">
       {isGameWon && <Confetti className="fixed top-0 left-0 h-full w-full" />}
-      <div className="max-w-md w-full flex flex-col items-center gap-6">
+      <div className="max-w-md w-full flex flex-col items-center gap-10 md:gap-8">
         <Header />
         <Status
           gameOver={gameOver}
