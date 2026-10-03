@@ -1,24 +1,37 @@
 import KeyboardLetter from "./KeyboardLetter";
 import { languages } from "../languages";
+import type { JSX } from "react";
+import { Dispatch, SetStateAction } from "react";
+
+type KeyboardProps = {
+  setClickedLetters: Dispatch<SetStateAction<string[]>>;
+  gameOver: boolean;
+  clickedLetters: string[];
+  word: string;
+  lastGuessedLetter: string;
+  wrongGuessCounter: number;
+};
 
 export default function Keyboard({
   setClickedLetters,
+  gameOver,
   clickedLetters,
   word,
-  gameOver,
   lastGuessedLetter,
   wrongGuessCounter,
-}) {
-  function handleClick(item) {
-    setClickedLetters((prev) => (prev.includes(item) ? prev : [...prev, item]));
-  }
-
+}: KeyboardProps): JSX.Element {
   const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
+  function addClickedLetters(letter: string): void {
+    setClickedLetters((prev: string[]): string[] =>
+      prev.includes(letter) ? prev : [...prev, letter],
+    );
+  }
+
   const alphabetElement = alphabet.split("").map((item) => {
-    const isGuessed = clickedLetters.includes(item);
-    const isCorrect = isGuessed && word.includes(item);
-    const isWrong = isGuessed && !word.includes(item);
+    const isGuessed: boolean = clickedLetters.includes(item);
+    const isCorrect: boolean = isGuessed && word.includes(item);
+    const isWrong: boolean = isGuessed && !word.includes(item);
 
     let style;
     if (isCorrect) {
@@ -33,23 +46,22 @@ export default function Keyboard({
       <KeyboardLetter
         key={item}
         item={item}
-        word={word}
         style={style}
         gameOver={gameOver}
         clickedLetters={clickedLetters}
-        handleClick={() => handleClick(item)}
+        handleClick={() => addClickedLetters(item)}
       />
     );
   });
 
   return (
-    <section className="flex gap-1 md:gap-2 flex-wrap justify-center">
+    <section className="flex flex-wrap justify-center gap-1 md:gap-2">
       {alphabetElement}
       <p className="sr-only">
         {word.includes(lastGuessedLetter)
           ? `Correct, letter ${lastGuessedLetter} is in the word.`
           : `Ops, letter ${lastGuessedLetter} is not in the word`}
-        You have {languages.length - 1 - wrongGuessCounter} attempts left. 
+        You have {languages.length - 1 - wrongGuessCounter} attempts left.
       </p>
     </section>
   );

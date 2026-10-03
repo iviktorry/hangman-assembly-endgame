@@ -1,8 +1,7 @@
 import { words } from "./words";
 
 function getRandomIndex(array: string[]): number {
-  const randomIndex: number = Math.floor(Math.random() * array.length);
-  return randomIndex;
+  return Math.floor(Math.random() * array.length);
 }
 
 export function getFarewellText(language: string): string {
