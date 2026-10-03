@@ -1,4 +1,4 @@
-export const words = [
+export const words: string[] = [
   "about",
   "account",
   "across",
@@ -480,5 +480,5 @@ export const words = [
   "wrong",
   "yellow",
   "yesterday",
-  "young"
+  "young",
 ];
