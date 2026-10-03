@@ -9,7 +9,7 @@ type LanguagesProps = {
 export default function Languages({
   wrongGuessCounter,
 }: LanguagesProps): JSX.Element {
-  const languagesList = languages.map(
+  const languagesList: JSX.Element[] = languages.map(
     (item: Language, index: number): JSX.Element => {
       return (
         <span

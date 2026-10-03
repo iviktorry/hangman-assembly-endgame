@@ -33,7 +33,7 @@ export default function Keyboard({
     const isCorrect: boolean = isGuessed && word.includes(item);
     const isWrong: boolean = isGuessed && !word.includes(item);
 
-    let style;
+    let style: string;
     if (isCorrect) {
       style = "bg-green-400";
     } else if (isWrong) {

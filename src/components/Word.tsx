@@ -13,7 +13,7 @@ export default function Word({
 }: WordProps): JSX.Element {
   const wordArray: JSX.Element[] = word
     .split("")
-    .map((item: string, index: number) => {
+    .map((item: string, index: number): JSX.Element => {
       return (
         <span
           key={index}
