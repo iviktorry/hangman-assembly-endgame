@@ -1,48 +1,46 @@
 # 💻 Assembly: Endgame
 
-A word-guessing game built with React, TypeScript, Vite, and Tailwind CSS. Save the programming world from complete Assembly takeover by guessing the hidden word before all high-level languages disappear!
+A word-guessing game built with React, TypeScript, and Tailwind CSS. Save the programming world from an Assembly takeover by guessing the hidden word before high-level languages disappear.
 
-![screenshot of interface](./src/assets/screenshot.png)
+![Application Interface Screenshot](./src/assets/screenshot.png)
 
 ## 🔗 Links
 
-- **Live Site:** [View Live Demo](https://hangman-assembly-endgame.vercel.app/)
-- **GitHub Repository:** [View Source Code](https://github.com/iviktorry/hangman-assembly-endgame)
+- **Live Demo:** [View Live Site](https://hangman-assembly-endgame.vercel.app/)
+- **Repository:** [View Source Code](https://github.com/iviktorry/hangman-assembly-endgame)
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack & Highlights
 
-- **TypeScript & React** — Type-safe component architecture, strict prop interfaces, derived states, and lazy state initialization
-- **Tailwind CSS** — Custom styling, typography, responsive layouts, and official plugins
-- **react-confetti** — Celebratory particles on victory
-- **Vite** — High-performance build tool
-
----
-
-## ✨ Features & Gameplay Rules
-
-- **Refactored to TypeScript:** Originally written in JavaScript (JSX) and fully migrated to TypeScript (TSX) with strict type safety for props, states, and utility handlers.
-- **Tailwind CSS Plugins:** Integrated official Tailwind plugins to enhance layout, typography, and styling workflow.
-- **Programming Language Lives:** Each wrong guess eliminates a high-level language (JavaScript, Python, React, etc.) until only Assembly remains.
-- **Dynamic Farewells:** Displays contextual farewell messages whenever a language goes extinct.
-- **Visual Word Status:** Reveals correctly guessed letters in real-time, with automatic end-game state highlighting.
-- **Full Accessibility (a11y):** Screen-reader friendly layout utilizing `sr-only` aria announcements (`blank.` vs actual letters) and interactive button attributes (`disabled`, `aria-pressed`).
-- **Celebratory Particle Effects:** Fullscreen confetti effect upon successfully saving the tech ecosystem.
+- **Core:** TypeScript, React 19, Vite, Tailwind CSS
+- **UX & Effects:** `react-confetti`, Lucide React
+- **JSX to TSX Migration:** Full codebase refactor with strict typing across React hooks, explicit props interfaces, and utility handlers.
+- **Minimal State Architecture:** Computed game states (`isGameWon`, `isGameLost`, `wrongGuessCounter`) derived purely on the fly without redundant `useState` triggers.
+- **Performance & A11y:** Lazy state initialization (`useState(() => getRandomWord())`) to optimize re-renders, and dynamic `sr-only` screen-reader aria announcements.
 
 ---
 
-## 🧠 What I Learned & Practiced
+## 🎮 Features & Rules
 
-- **JSX to TSX Migration:** Refactored the entire codebase from JavaScript to TypeScript. Practiced typing React component props, `useState` hook setters (`Dispatch<SetStateAction<T>>`), and event handlers.
-- **Strict Type Safety:** Handled complex derived types, boolean coercion (`Boolean()`), and edge-case values (e.g., avoiding falsy `0` leakage in string templates).
-- **Minimal State Architecture:** Avoided redundant states by computing game logic (e.g., `wrongGuessCounter`, `isGameLost`, `isGameWon`, `farewellText`) purely on the fly derived from `word` and `clickedLetters`.
-- **Accessible Screen Reader Output:** Built dedicated `sr-only` descriptions mapping over letter elements to provide audible feedback for visual blanks (`blank.`).
-- **Clean Component Encapsulation:** Passed isolated value updates through top-down callbacks (`handleClick={() => handleClick(item)}`) rather than manipulating target elements via raw DOM events.
-- **Utility Modules:** Separated pure utility logic (`getRandomWord`, `getFarewellText`) from React component rendering into external typed modules.
-- **Lazy State Initialization:** Initialized random word state lazily (`useState(() => getRandomWord())`) to prevent unnecessary recalculations on re-renders.
+- **Language Elimination:** Each incorrect guess removes a high-level language until only Assembly remains.
+- **Dynamic Farewells:** Generates contextual farewell messages as languages go extinct.
+- **Accessible Controls:** Keyboard and click-based input with dynamic `disabled` and `aria-pressed` states.
+- **Victory Effects:** Celebratory fullscreen confetti particles upon winning.
 
 ---
+
+## Getting Started
+
+```bash
+# Clone the repository
+git clone [https://github.com/iviktorry/hangman-assembly-endgame.git](https://github.com/iviktorry/hangman-assembly-endgame.git)
+cd hangman-assembly-endgame
+
+# Install dependencies and start dev server
+npm install
+npm run dev
+```
 
 ## 👩‍💻 Developer Contacts & Socials
 
