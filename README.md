@@ -34,7 +34,7 @@ A word-guessing game built with React, TypeScript, and Tailwind CSS. Save the pr
 
 ```bash
 # Clone the repository
-git clone [https://github.com/iviktorry/hangman-assembly-endgame.git](https://github.com/iviktorry/hangman-assembly-endgame.git)
+git clone https://github.com/iviktorry/hangman-assembly-endgame.git
 cd hangman-assembly-endgame
 
 # Install dependencies and start dev server
